@@ -8,7 +8,7 @@ public class Receiver {
 	public void receiveData() {
 		try {
 			//Port over which it is listening.
-			int port = 8000;
+			int port = 80;
 			byte[] buffer = new byte[100];
 
 			//Datagram packet specifying the length of the message

@@ -15,7 +15,7 @@ public class Sender {
 			int port = 80;
 			
 			//IPAddress of Clients
-			String maudieIPAddress = "192.168.1.10";
+			String maudieIPAddress = "";
 			
 			//InetAddress instance of clients
 			InetAddress maudieInetAddress = InetAddress.getByName(maudieIPAddress);
