@@ -3,9 +3,10 @@ package com.live.streaming.udp.service;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
-public class Receiver {
+public class UDP_Server {
 
-	public void receiveData() {
+	public String receiveLiveStreamingData() {
+		byte[] data; 
 		try {
 			//Port over which it is listening.
 			int port = 80;
@@ -21,13 +22,14 @@ public class Receiver {
 			datagramSocket.receive(datagramPacket);
 			System.out.println("After receiving the data");
 			
-			byte[] data = datagramPacket.getData();
-			System.out.println(data.toString());
-			
+			data = datagramPacket.getData();
+			//System.out.println(data.toString());
+			return data.toString();
 		}catch(Exception ex) {
 			System.out.println("In Exception :: " + ex.getMessage());
+			data = "Connection Issue".getBytes(); 
 		}
-		
+		return data.toString();
 	}
 	
 }

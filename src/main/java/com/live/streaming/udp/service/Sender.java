@@ -5,6 +5,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 public class Sender {
+	
 	public void performUDPConnection() {
 		try {
 			//buffer = new byte[100];
@@ -27,6 +28,7 @@ public class Sender {
 			
 			//Creating a DatagramSocket to send the UDP Packet
 			DatagramSocket datagramSocket = new DatagramSocket();
+			
 			System.out.println("Before sending the data");
 			datagramSocket.send(datagramPacket);
 			System.out.println("After sending the data");
