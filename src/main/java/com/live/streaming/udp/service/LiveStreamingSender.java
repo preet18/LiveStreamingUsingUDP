@@ -13,7 +13,7 @@ public class LiveStreamingSender {
 		/*
 		 * 
 		 */
-		TCP_IP_Server tcpServer = new TCP_IP_Server();
+		TCP_IP_Server_old tcpServer = new TCP_IP_Server_old();
 		List<String> ipList = tcpServer.getClientIPAddress();
 		
 		/* 

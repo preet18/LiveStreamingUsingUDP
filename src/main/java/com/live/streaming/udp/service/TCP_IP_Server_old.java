@@ -5,12 +5,14 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.live.streaming.udp.interfaces.SendDataViaTCPIP;
-
-public class TCP_IP_Server {
-
-	public void getTCPIPConnection(SendDataViaTCPIP tcpIPData) {
+public class TCP_IP_Server_old {
+	/**
+	 * TCP IP Server which is used to get the client address before streaming the data over that IP Address.
+	 * @return 
+	 * **/
+	public List<String> getClientIPAddress() {
 		System.out.println("TCP_IP_Server....Send Live Stream Data...");
+		List<String>  ipList = new ArrayList<>();
 		try {
 			int port = 9000;
 			ServerSocket serverSocket = new ServerSocket(port);
@@ -19,10 +21,16 @@ public class TCP_IP_Server {
 			while(!isStopped) {
 				Socket socket = serverSocket.accept();
 				System.out.println("Client IP Address :: " + socket.getInetAddress().getHostAddress());
-				tcpIPData.fetchData(socket);
+				ipList.add(socket.getInetAddress().getHostAddress());
+				isStopped = true;
+			}
+			System.out.println("List of IPs...");
+			for(String ip: ipList) {
+				System.out.println(ip);
 			}
 		}catch(Exception ex) {
 			System.out.println("In TCP IP Server Exception :: " + ex.getMessage());
 		}
+		return ipList;
 	}
 }
