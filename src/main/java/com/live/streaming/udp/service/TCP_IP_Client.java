@@ -8,7 +8,7 @@ public class TCP_IP_Client {
 	public void doTCPIPConnection() {
 		System.out.println("TCP IP Client... TO Receive the live streaming data...");
 		try {
-			String ipAddress = "123.321.342.342";
+			String ipAddress = "172.20.10.9";
 			int port = 9000;
 			byte[] data = new byte[100];
 			data = "Me".getBytes();
