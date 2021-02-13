@@ -17,8 +17,6 @@ public class FindMyIP {
 			System.out.println("In Exception :: " + ex.getMessage());
 		}
 		
-		
-		
 		/*try {
 			InetAddress inetAddress = InetAddress.getLocalHost();
 			System.out.println(inetAddress.getHostAddress());
