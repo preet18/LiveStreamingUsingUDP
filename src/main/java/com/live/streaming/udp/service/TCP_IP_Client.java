@@ -15,6 +15,7 @@ public class TCP_IP_Client {
 			Socket socket = new Socket(ipAddress, port);
 			OutputStream outputStream = socket.getOutputStream();
 			outputStream.write(data);
+			outputStream.flush();
 			outputStream.close();
 			socket.close();
 		}catch(Exception ex) {
