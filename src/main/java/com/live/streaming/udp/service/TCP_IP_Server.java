@@ -20,6 +20,7 @@ public class TCP_IP_Server {
 			System.out.println("Accepting the TCP/IP connections from clients...");
 			while(!isStopped) {
 				Socket socket = serverSocket.accept();
+				System.out.println("Client IP Address :: " + socket.getInetAddress().getHostAddress());
 				ipList.add(socket.getInetAddress().getHostAddress());
 				isStopped = true;
 			}
