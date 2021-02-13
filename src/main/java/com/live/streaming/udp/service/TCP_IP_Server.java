@@ -8,13 +8,15 @@ import java.util.List;
 public class TCP_IP_Server {
 	/**
 	 * TCP IP Server which is used to get the client address before streaming the data over that IP Address.
+	 * @return 
 	 * **/
-	public void getClientIPAddress() {
+	public List<String> getClientIPAddress() {
+		System.out.println("TCP_IP_Server....Send Live Stream Data...");
+		List<String>  ipList = new ArrayList<>();
 		try {
 			int port = 9000;
 			ServerSocket serverSocket = new ServerSocket(port);
 			boolean isStopped = false;
-			List<String>  ipList = new ArrayList<>();
 			System.out.println("Accepting the TCP/IP connections from clients...");
 			while(!isStopped) {
 				Socket socket = serverSocket.accept();
@@ -28,5 +30,6 @@ public class TCP_IP_Server {
 		}catch(Exception ex) {
 			System.out.println("In TCP IP Server Exception :: " + ex.getMessage());
 		}
+		return ipList;
 	}
 }

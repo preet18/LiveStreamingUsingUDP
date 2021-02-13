@@ -6,6 +6,7 @@ import java.net.DatagramSocket;
 public class UDP_Server {
 
 	public String receiveLiveStreamingData() {
+		System.out.println("UDP_Server... TO Receive the live streaming data...");
 		byte[] data; 
 		try {
 			//Port over which it is listening.

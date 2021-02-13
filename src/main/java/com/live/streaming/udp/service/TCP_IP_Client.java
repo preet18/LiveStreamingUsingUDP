@@ -6,7 +6,7 @@ import java.net.Socket;
 public class TCP_IP_Client {
 
 	public void doTCPIPConnection() {
-		
+		System.out.println("TCP IP Client... TO Receive the live streaming data...");
 		try {
 			String ipAddress = "123.321.342.342";
 			int port = 9000;
