@@ -23,7 +23,7 @@ public class UDP_Client {
 			System.out.println("Data..." + buffer[0] + " Size :: " + buffer.length);
 			System.out.println("Sending the data over the network....");
 			for(String ip: ipList) {
-				InetAddress inetAddress = InetAddress.getByAddress(ip.getBytes());
+				InetAddress inetAddress = InetAddress.getByName(ip);
 				DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length, inetAddress, port);
 				DatagramSocket datagramSocket = new DatagramSocket();
 				datagramSocket.send(datagramPacket);

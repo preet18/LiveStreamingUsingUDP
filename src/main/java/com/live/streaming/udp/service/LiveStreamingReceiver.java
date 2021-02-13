@@ -8,7 +8,7 @@ public class LiveStreamingReceiver {
 		 * To get live streaming, just establishing tcp ip connection, so that the
 		 * server knows the ip to which it need to send the live streaming data.
 		 */
-		TCP_IP_Client tcpClient = new TCP_IP_Client();
+		TCP_IP_Client_Old tcpClient = new TCP_IP_Client_Old();
 		tcpClient.doTCPIPConnection();
 		
 		/* 
